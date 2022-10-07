@@ -1,0 +1,199 @@
+html body{
+    height: 100vh;
+    margin:0px;
+    padding:0px;
+    background-color: rgb(210, 209, 209);
+    background-image: url('images/background.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-blend-mode: exclusion;
+    background-size: 100%;
+
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 10s;
+    animation-name: bodyback ;
+}
+
+@keyframes bodyback {
+    0%   { background-size: 100%; }
+    10%  { background-size: 0%;  background-blend-mode: difference;   }
+    20%  { background-size: 100%; }
+    30%  { background-size: 0%;  background-blend-mode:overlay;  }
+    40%  { background-size: 100%; }
+    50%  { background-size: 0%;   background-blend-mode: exclusion;}
+    60% {background-size: 100%;  }
+    70%  { background-size: 0%; background-blend-mode: difference;  }
+    80% {background-size: 100%;  }
+    90%  { background-size: 0%; background-blend-mode:overlay; }
+    100% {background-size: 100%;  }
+
+}
+.outer{
+    position:absolute;
+    height:100%;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 1;}
+
+.container{
+  
+    position: relative;
+    background-color: rgb(200, 200, 200);
+    width:600px;
+    height:600px;
+    margin-left: auto;
+    margin-right: auto;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.117);
+}
+
+.item{
+    width:33%;
+    height:200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    filter:drop-shadow(5px 5px 5px black);
+    transition:filter 200ms;
+}
+.item:hover{
+    filter:none;
+}
+
+.cn {
+    filter:none ;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+}
+
+.cn:active{
+    animation-name: spinner;
+    animation-duration: 5000ms !important;
+}
+
+.cn:hover{
+    animation-name: spinner;
+    animation-duration: 500ms; 
+}
+
+.www{
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 500ms;
+}
+
+.www:hover{
+    animation-name: fade;
+}
+
+.fb{
+    opacity: 1;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 100ms;
+    position:relative;
+}
+.fb:hover{
+    animation-name: bounce;
+}
+
+
+
+@keyframes spinner {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes bounce {
+    0% {
+        top:-10px;
+    }
+    100% {
+        top:-50px;
+    }
+}
+
+@keyframes fade {
+    0% {
+        opacity: 1;
+    }
+
+    50% { 
+        opacity: 0;
+        }
+    100% { 
+        opacity: 1;
+    }
+
+}
+
+.twitter, .twitter .twit{
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 1000ms;
+}
+
+.twitter:hover .twit{
+    animation-name: pulse;
+}
+
+.twitFrame{
+    fill:none;
+    stroke:#000000;
+    stroke-miterlimit:10;}
+
+.twit{
+    fill:#000000;
+    stroke:#000000;
+    stroke-miterlimit:10;}
+
+@keyframes pulse {
+    0% {
+        fill:#009dff;
+    }
+
+    50% { 
+        fill:#b9e103;
+        }
+    100% { 
+        fill:#009dff;
+    }
+
+}
+
+
+
+.insta, .insta img{
+    animation-iteration-count: infinite;
+    animation-timing-function: linear; 
+    animation-duration: 1000ms;
+}
+
+.insta:hover img{
+    animation-name: shrink;
+}
+
+
+@keyframes shrink {
+    0% {
+        width:100%;
+    }
+
+    50% { 
+        width:25%;
+        }
+    100% { 
+        width:100%;
+    }
+
+}
